@@ -1,3 +1,4 @@
+# Jumpstart a database with working geocoding features that you would normally get from the tiger geocoder mess.
 
 Wow.  The "install" process for getting postgis to do all the things is horrible.  Really, horrible.
 
