@@ -10,13 +10,13 @@ set -e -u
 WGET="wget --no-parent --relative --recursive --level=1 --accept=zip --mirror --reject=html --no-directories --no-verbose --no-clobber"
 D="postgis_template"
 P="psql -d ${D}"
-TMP="/tmp/${D}_${$}"
-mktemp -d $TMP
+#TMP="/tmp/${D}_${$}"
+TMP=$(mktemp -d /tmp/${D}_XXXXXX)
 cd $TMP
 
 svn co svn://svn.code.sf.net/p/pagc/code/branches/sew-refactor/postgresql address_standardizer
 cd address_standardizer
-make install
+#make install
 cd ..
 
 psql -d postgres -c "CREATE DATABASE ${D};"
